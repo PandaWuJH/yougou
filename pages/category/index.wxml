@@ -1,0 +1,49 @@
+<!--pages/category/index.wxml-->
+<view class="container">
+
+  <!-- 搜索框 -->
+  <search/>
+
+  <!-- 左边侧边栏 -->
+  <view class="totalMain">
+  <view class="mainLeft">
+    <view style="position:relative" wx:for="{{category}}" wx:key="{{index}}" bindtap="handle" data-index='{{index}}'>
+      <view class="mainLeftItem {{current===index?'active':''}}">
+        {{item.cat_name}}
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 右边品牌区 -->
+  <view class="mainRight">
+
+    <!-- 上部分图片 -->
+    <view class="mainRightTop">
+      <image src="https://api.zbztb.cn/pyg/banner2.png">
+
+  </image>
+    </view>
+
+    <!-- 下部分品牌 -->
+    <view class="brand" wx:for="{{category[current].children}}" wx:key="{{index}}">
+
+      <view class="title">
+        <text>/</text>{{item.cat_name}}
+        <text>/</text>
+      </view>
+      <view class="brndList">
+        <view class="brandImgText" wx:for="{{item.children}}" wx:key="{{index}}">
+          <view class="brandImg">
+            <image src="{{item.cat_icon}}"></image>
+          </view>
+          <view>{{item.cat_name}}</view>
+        </view>
+
+
+      </view>
+    </view>
+
+  </view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+/* components/search/index.wxss */
+/* 搜索框 */
+.search{
+  padding: 20rpx;
+  background-color:#ff2d4a;
+  color: #ddd;
+  position:fixed;
+  top: 0;
+  left:0;
+  z-index:9;
+  width:100%;
+  box-sizing:border-box;
+  
+}
+.search-input{
+  height: 60rpx;
+  background-color:#fff;
+  border-radius:4px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-input icon{
+  margin-right:10px;
+}

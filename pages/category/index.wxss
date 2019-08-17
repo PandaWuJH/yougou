@@ -1,0 +1,108 @@
+/* pages/category/index.wxss */
+.container{
+  padding-top: 97rpx;
+  position: absolute;
+  /* 设置单独容器滚动条 */
+  bottom:0;
+  top:0;
+  height: 100%;
+}
+
+.mainLeft{
+  position: absolute;
+  /* 设置单独容器滚动条 */
+  bottom:0;
+  top:84rpx;
+  height: 100%;
+  overflow: scroll;
+}
+.mainLeftItem{
+  width:200rpx;
+  color:#666;
+  background-color: #f3f3f3;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 14px;
+}
+
+.active{
+  color:#eb4450;
+  background-color:#fff;
+  
+}
+
+.active::before{
+  display: inline-block;
+  content:"";
+  width: 3px;
+  background-color: #eb4450;
+  height: 53rpx;
+  position: absolute;
+  top: 35rpx;
+  left: 0
+} 
+
+.mainRight{
+  /* padding-left: 210rpx; */
+   position: absolute;
+  /* 设置单独容器滚动条 */
+  left: 210rpx;
+  bottom:0;
+  top:80px;
+  height: 100%;
+  overflow: scroll;
+  width: 550rpx;
+}
+
+.mainRightTop{
+  /* margin-top:20px; */
+/* border: 1px solid red; */
+width: 490rpx;
+height: 250rpx;
+margin-left: 17rpx;
+}
+.mainRightTop image{
+  width: 100%;
+  height: 100%
+}
+
+.title{
+  text-align: center;
+  color: #666;
+  margin: 20rpx 0;
+}
+.title text{
+  margin: 0 10px;
+  color: #ddd;
+}
+.brndList{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+
+.brandImgText{
+ width: 33.33%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ box-sizing: border-box;
+ padding-right: 8px;
+ font-size: 12px;
+ height: 186rpx;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+}
+.brandImg{
+  /* border: 1px solid green; */
+  width: 100%;
+  height: 150rpx;
+}
+.brandImg image{
+  width: 100%;
+  height: 100%;
+}

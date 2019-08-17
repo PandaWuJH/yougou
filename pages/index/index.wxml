@@ -1,13 +1,40 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<!-- 搜索框 -->
+  <search/>
+
+  <!-- 轮播图 -->
+  <swiper indicator-dots indicator-color="rgba(255, 255, 255, .3)"	
+  indicator-active-color="#fff" circular
+  autoplay="true" interval="3000" duration="1000">
+  <block wx:for="{{bannerImg}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.image_src}}" mode="aspectFill"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 分类列表 -->
+  <view class="categroy">
+      <view wx:for="{{categroy}}" wx:key="{{index}}">
+        <image src="{{item.image_src}}"></image>
+      </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <!-- 主要内容 -->
+  <view class="main" wx:for="{{mainImg}}" wx:key="{{index}}">
+    
+  <image src="{{item.floor_title.image_src}}" class="titleImg"></image>
+    <view class="totalImg">
+          <!-- 左边图片 -->
+      <view  class="mianLeftImg" >     
+        <image src="{{item.product_list[0].image_src}}"></image>
+      </view>
+
+      <!-- 右边图片 -->
+      <view class="mianRightImg">
+            <view wx:for="{{item.product_list}}"><image src="{{item.image_src}}" wx:if="{{index>0}}" wx:key="{{index}}"></image></view>
+      </view>
+  </view>
   </view>
 </view>
